@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Builder</title>
+</head>
+<body>
+    <h1>Query Builder</h1>
+
+    <!-- Data Source Dropdown -->
+    <label for="dataSource">Data Source:</label>
+    <select id="dataSource">
+        <option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/1">LRS - ARNOLD</option>
+        <option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/2">LRS - TOWN</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/3">LRS - Rail</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/10">Structures - Long</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/11">Structures - Short</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/12">Structures - Small Culverts</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/14">Structures - Drop Inlets</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/16">Structures - Access Holes</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/30">TSMO - Approaches</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/31">TSMO - Cabinets</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/32">TSMO - Signal Points</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/33">Pavement Markings - Line Striping</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/34">Pavement Markings - Stencils</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/35">GeoTech - Points</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/37">Damage - Point History</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/38">Damage - Point</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/39">Damage - Line</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/40">AMB - Retaining Walls</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/41">AMB - Guardrail</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/42">AMB - Corridor Needs</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/44">Rumble Stripes - Centerline</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/45">Rumble Strips - Left and Right</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/50">MOB - Stormwater - Area Treatment</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/51">Stormwater - Linear Treatment</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/52">MOB - Stormwater - Point Treatment</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/53">MOB - Stormwater - Underdrain Cleanout</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/54">MOB - Stormwater - Discharge Points</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/55">MOB - Stormwater - Permit Location</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/56">MOB - Stormwater - Project Limits</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/57">MOB - Stormwater - Add 2 SCI Culverts</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/58">MOB - Stormwater - Add 2 SCI DropInlets</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/59">MOB - Ditches - Road Segments</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/60">MOB - Ditches - Swales</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/61">MOB - Ditches - Outfall</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/62">MOB - Ditches - Retention Areas</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/63">MOB - Ditches - Erosion</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/64">MOB - Ditches - Illicit Discharge</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/65">MOB - Ditches - MS4 Boundaries</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/66">MAB - Park and Ride - Expanded</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/70">Gen - Customer Level Of Service</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/71">Gen - MATS District Mileages</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/72">Gen - Highway Corridor Priority</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/73">Gen - Political Boundaries</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/74">Gen - AADT</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/75">Gen - Functional Class</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/76">Gen - NHS</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/77">Gen - Speed Limits</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/78">Gen - Speed Zones</option>
+	<option value="https://maps.vtrans.vermont.gov/arcgis/rest/services/VAMIS/VAMIS/FeatureServer/79">Gen - Road Width</option>
+        <!-- Add more options for your data sources -->
+    </select>
+
+    <!-- Attribute Dropdown -->
+    <label for="attribute">Attribute:</label>
+    <select id="attribute">
+        <!-- Options will be populated based on the selected data source -->
+    </select>
+
+    <!-- Operator Dropdown -->
+    <label for="operator">Operator:</label>
+    <select id="operator">
+        <option value="equals">Equals</option>
+        <option value="notEquals">Not Equals</option>
+        <option value="greaterThan">Greater Than</option>
+        <option value="lessThan">Less Than</option>
+        <!-- Add more operators as needed -->
+    </select>
+
+    <!-- Additional Clauses -->
+    <div id="clauses">
+        <!-- Additional clauses will be added here -->
+    </div>
+
+    <!-- Button to Add Additional Clause -->
+    <button id="addClause">Add Clause</button>
+
+    <br><br>
+    
+    <!-- Button to Submit Query -->
+    <button id="submitQuery">Submit Query</button>
+
+<script>
+    // Event listener for the "Add Clause" button
+    document.getElementById('addClause').addEventListener('click', function () {
+        // Create a new set of dropdowns for the additional clause
+        const clauseContainer = document.createElement('div');
+
+        // Data Source Dropdown for Additional Clause
+        const dataSourceClone = document.getElementById('dataSource').cloneNode(true);
+        dataSourceClone.id = ''; // Clear the ID to avoid conflicts
+        clauseContainer.appendChild(dataSourceClone);
+
+        // Attribute Dropdown for Additional Clause
+        const attributeClone = document.getElementById('attribute').cloneNode(true);
+        attributeClone.id = ''; // Clear the ID to avoid conflicts
+        clauseContainer.appendChild(attributeClone);
+
+        // Operator Dropdown for Additional Clause
+        const operatorClone = document.getElementById('operator').cloneNode(true);
+        operatorClone.id = ''; // Clear the ID to avoid conflicts
+        clauseContainer.appendChild(operatorClone);
+
+        // Button to Remove Clause
+        const removeClauseButton = document.createElement('button');
+        removeClauseButton.textContent = 'Remove';
+        removeClauseButton.addEventListener('click', function () {
+            // Remove this additional clause when the "Remove" button is clicked
+            clauseContainer.remove();
+        });
+        clauseContainer.appendChild(removeClauseButton);
+
+        document.getElementById('clauses').appendChild(clauseContainer);
+    });
+
+    // Event listener for the "Submit Query" button
+    document.getElementById('submitQuery').addEventListener('click', function () {
+        // Collect and process the user's query here
+        const dataSourceValue = document.getElementById('dataSource').value;
+        const attributeValue = document.getElementById('attribute').value;
+        const operatorValue = document.getElementById('operator').value;
+
+        // Iterate through additional clauses
+        const additionalClauses = [];
+        const clauseContainers = document.querySelectorAll('#clauses select');
+        clauseContainers.forEach(function (container) {
+            const clauseDataSource = container[0].value;
+            const clauseAttribute = container[1].value;
+            const clauseOperator = container[2].value;
+            additionalClauses.push({
+                dataSource: clauseDataSource,
+                attribute: clauseAttribute,
+                operator: clauseOperator
+            });
+        });
+
+        // Perform your query or data processing with the collected information
+        console.log('Data Source:', dataSourceValue);
+        console.log('Attribute:', attributeValue);
+        console.log('Operator:', operatorValue);
+        console.log('Additional Clauses:', additionalClauses);
+    });
+
+    // Add this code for attribute dropdown population
+    document.getElementById('dataSource').addEventListener('change', function () {
+        // Get the selected data source
+        const selectedDataSource = document.getElementById('dataSource').value;
+
+        // Fetch field names from your data source and populate the attribute dropdown
+        fetchAttributeNames(selectedDataSource);
+    });
+
+    function fetchAttributeNames(dataSource) {
+        // Replace the URL with the actual ArcGIS REST service URL for your data source
+        const serviceUrl = 'YOUR_ARCGIS_SERVICE_URL';
+
+        fetch(`${serviceUrl}/0?f=json`) // Assuming the layer index is 0
+            .then(response => response.json())
+            .then(data => {
+                // Extract field names from the response and populate the attribute dropdown
+                const attributeDropdown = document.getElementById('attribute');
+                attributeDropdown.innerHTML = ''; // Clear existing options
+
+                data.fields.forEach(field => {
+                    const option = document.createElement('option');
+                    option.value = field.name;
+                    option.textContent = field.alias;
+                    attributeDropdown.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching attribute names:', error);
+            });
+    }
+</script>
+
+
+
+</script>
+</body>
+</html>
